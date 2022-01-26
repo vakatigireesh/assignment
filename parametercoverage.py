@@ -47,7 +47,7 @@ def findParameterFromXMLDataFrame(xmlToDf, searchString):
       
 
      
-searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP'
+searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP_p'
 findParameterFromXMLDataFrame(xmlToDf,searchString)
 
 
