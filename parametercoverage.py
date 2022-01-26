@@ -43,6 +43,7 @@ def findParameterFromXMLDataFrame(xmlToDf, searchString):
       print('No available Parameter')
       raise
    else:
+    print('Parameter is available')
     print(xmlToDf[xmlToDf['Object'].str.contains(searchString)])
       
 
