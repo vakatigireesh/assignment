@@ -31,8 +31,8 @@ def convertXMLtoDataFrame():
    
 
 xmlToDf= convertXMLtoDataFrame()
-print(xmlToDf.to_string(index=False))
-xmlToDf.to_csv('exampleXML.csv')
+#print(xmlToDf.to_string(index=False))
+#xmlToDf.to_csv('exampleXML.csv')
 
 
 # Step 3
@@ -46,7 +46,7 @@ def findParameterFromXMLDataFrame(xmlToDf, searchString):
       
 
      
-searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP_p'
+searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP'
 findParameterFromXMLDataFrame(xmlToDf,searchString)
 
 
