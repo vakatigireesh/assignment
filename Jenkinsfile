@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                 sh 'python -m py_compile parametercoverage.py'
+                 sh 'python parametercoverage.py'
             }
         }
         stage('Test') {
