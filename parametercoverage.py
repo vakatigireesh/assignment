@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 xls = pd.ExcelFile('individualparametercoverage.xlsx')
 
 df = xls.parse('Sheet1', skiprows=5,usecols="B,C", index_col=None, na_values=['NA'])
-print(df)
+#print(df)
 
 #Step 2
 def convertXMLtoDataFrame():
@@ -30,13 +30,13 @@ def convertXMLtoDataFrame():
     return xmlToDf;
 
 xmlToDf= convertXMLtoDataFrame()
-print(xmlToDf.to_string(index=False))
+#print(xmlToDf.to_string(index=False))
 
 
 # Step 3
 def findParameterFromXMLDataFrame(xmlToDf, searchString):
     print(xmlToDf[xmlToDf['Object'].str.contains(searchString)])
 
-searchString='RTDB_GP_ESWITCH_OUTPUTS_E'
+searchString='RTDB_GP_ESWITCH_OUTPUTS_E_F'
 findParameterFromXMLDataFrame(xmlToDf,searchString)
 
