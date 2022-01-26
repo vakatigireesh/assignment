@@ -28,15 +28,26 @@ def convertXMLtoDataFrame():
   
     xmlToDf = pd.DataFrame(all_items,columns=['Object','Number','Responsible'])        
     return xmlToDf;
+   
 
 xmlToDf= convertXMLtoDataFrame()
-#print(xmlToDf.to_string(index=False))
+print(xmlToDf.to_string(index=False))
+#xmlToDf.to_csv('exampleXML.csv')
 
 
 # Step 3
 def findParameterFromXMLDataFrame(xmlToDf, searchString):
+   exdf=xmlToDf[xmlToDf['Object'].str.contains(searchString)]   
+   a=exdf.isnull()
+   if a.empty:       
+      raise
+      print('No available Parameter')
+   else:
     print(xmlToDf[xmlToDf['Object'].str.contains(searchString)])
+      
 
-searchString='RTDB_GP_ESWITCH_OUTPUTS_E_F'
+     
+searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP_p'
 findParameterFromXMLDataFrame(xmlToDf,searchString)
+
 
