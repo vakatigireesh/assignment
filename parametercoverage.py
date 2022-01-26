@@ -40,6 +40,7 @@ def findParameterFromXMLDataFrame(xmlToDf, searchString):
    exdf=xmlToDf[xmlToDf['Object'].str.contains(searchString)]   
    a=exdf.isnull()
    if a.empty:      
+      raise
       print('No available Parameter')
    else:
     print(xmlToDf[xmlToDf['Object'].str.contains(searchString)])
