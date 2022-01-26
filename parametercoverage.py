@@ -39,15 +39,14 @@ print(xmlToDf.to_string(index=False))
 def findParameterFromXMLDataFrame(xmlToDf, searchString):
    exdf=xmlToDf[xmlToDf['Object'].str.contains(searchString)]   
    a=exdf.isnull()
-   if a.empty:       
-      raise
+   if a.empty:      
       print('No available Parameter')
    else:
     print(xmlToDf[xmlToDf['Object'].str.contains(searchString)])
       
 
      
-searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP'
+searchString='RTDB_GP_ESWITCH_OUTPUTS_E_DEPOP_p'
 findParameterFromXMLDataFrame(xmlToDf,searchString)
 
 
