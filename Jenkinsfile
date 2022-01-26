@@ -1,14 +1,21 @@
 pipeline {
-    agent none
+    agent any
+
     stages {
-        stage('Build') {
-            agent any {
-                docker {
-                    image 'python:2-alpine'
-                }
-            }
+        stage('Get Latest Sourcecode') {
             steps {
-                sh 'python -m py_compile parametercoverage.py'
+	        git 'https://github.com/vakatigireesh/assignment.git'
+            }
+        }
+        stage('Compile') {
+            steps {
+                 sh 'python -m py_compile parametercoverage.py'
+            }
+        }
+        stage('Test') {
+            steps {
+		input message: 'Are you sure to proceed to next step? ', ok: 'Yes'
+              
             }
         }
     }
