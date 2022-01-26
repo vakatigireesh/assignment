@@ -31,20 +31,18 @@ def convertXMLtoDataFrame():
    
 
 xmlToDf= convertXMLtoDataFrame()
-#print(xmlToDf.to_string(index=False))
-#xmlToDf.to_csv('exampleXML.csv')
+print(xmlToDf.to_string(index=False))
+xmlToDf.to_csv('exampleXML.csv')
 
 
 # Step 3
 def findParameterFromXMLDataFrame(xmlToDf, searchString):
    exdf=xmlToDf[xmlToDf['Object'].str.contains(searchString)]   
-   a=exdf.isnull()
-   if a.empty: 
+   if exdf.empty:       
       print('No available Parameter')
       raise
    else:
-    print('Parameter is available')
-    print(xmlToDf[xmlToDf['Object'].str.contains(searchString)])
+    print(exdf)
       
 
      
