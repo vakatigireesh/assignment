@@ -12,12 +12,12 @@ pipeline {
             steps {
                 echo "-=- preparing project environment -=-"
                 // Python dependencies
-                sh "pip install pandas wheel openpyxl"
+                sh "pip3 install pandas wheel openpyxl"
             }
         }
         stage('Compile') {
             steps {
-                 sh 'python parametercoverage.py'
+                 sh 'python3 parametercoverage.py'
             }
         }
         stage('Test') {
