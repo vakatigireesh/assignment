@@ -20,11 +20,5 @@ pipeline {
                  sh 'python3 parametercoverage.py'
             }
         }
-        stage('Test') {
-            steps {
-		input message: 'Are you sure to proceed to next step? ', ok: 'Yes'
-              
-            }
-        }
     }
 }
