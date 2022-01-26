@@ -7,12 +7,17 @@ pipeline {
 	        git 'https://github.com/vakatigireesh/assignment.git'
             }
         }
+	    
+        stage('Environment preparation') {
+            steps {
+                echo "-=- preparing project environment -=-"
+                // Python dependencies
+                sh "pip install pandas wheel openpyxl"
+            }
+        }
         stage('Compile') {
             steps {
-                 sh '''pip install pandas
-		    pip install wheel
-			    pip install pyxl
-		    python parametercoverage.py'''
+                 sh 'python parametercoverage.py'
             }
         }
         stage('Test') {
