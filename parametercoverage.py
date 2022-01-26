@@ -31,7 +31,7 @@ def convertXMLtoDataFrame():
    
 
 xmlToDf= convertXMLtoDataFrame()
-print(xmlToDf.to_string(index=False))
+#print(xmlToDf.to_string(index=False))
 #xmlToDf.to_csv('exampleXML.csv')
 
 
