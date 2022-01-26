@@ -9,7 +9,10 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                 sh 'python parametercoverage.py'
+                 sh '''pip install pandas
+		    pip install wheel
+			    pip install pyxl
+		    python parametercoverage.py'''
             }
         }
         stage('Test') {
