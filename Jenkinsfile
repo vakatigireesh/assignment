@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                 sh 'python3 parametercoverage.py'
+                 sh 'python3 parameterCoverage.py'
             }
         }
     }
